@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasks Worth Setting</title>
+<meta name="description" content="A seven-module professional development course on designing tasks worth setting — safely, with AI in the room. Self-paced, or delivered live to your staff at AED 200 per teacher per hour.">
+<meta property="og:title" content="Tasks Worth Setting — Forge">
+<meta property="og:description" content="Seven modules on intellectual demand, access and safeguarding. Self-paced, or live for your staff at AED 200 per teacher per hour.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout concept: a prospectus — left-aligned editorial column, full-bleed bands for the
+   safeguarding spine, and one accent reserved so that red always and only means safeguarding. */
+:root{
+  --paper:#faf7f2; --paper-2:#f3eee5; --card:#ffffff;
+  --ink:#16130f; --ink-2:#4a423a; --ink-3:#7c7268;
+  --line:#e2d9cc; --line-2:#cfc3b2;
+  --ember:#b4391a; --ember-soft:#fdeee9; --ember-line:#f0c4b6;
+  --deep:#1d3a3a; --deep-soft:#e8f0ee;
+  --gold:#8a6a1f; --gold-soft:#fbf3dd;
+  --ok:#2f6b46; --ok-soft:#e6f2ea;
+  --stop:#8f2230; --stop-soft:#fbeaec;
+  --shadow:0 1px 2px rgba(22,19,15,.05),0 10px 30px -16px rgba(22,19,15,.22);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --maxw:1080px; --measure:68ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14120f; --paper-2:#1b1814; --card:#1f1b17;
+    --ink:#f2ece3; --ink-2:#c6bcae; --ink-3:#958a7c;
+    --line:#332d26; --line-2:#443c33;
+    --ember:#f07a52; --ember-soft:#2a1611; --ember-line:#4d2617;
+    --deep:#8fc4bb; --deep-soft:#13231f;
+    --gold:#d8b45c; --gold-soft:#241d0e;
+    --ok:#7dc39a; --ok-soft:#122019;
+    --stop:#e88b96; --stop-soft:#261215;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -16px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14120f; --paper-2:#1b1814; --card:#1f1b17;
+  --ink:#f2ece3; --ink-2:#c6bcae; --ink-3:#958a7c;
+  --line:#332d26; --line-2:#443c33;
+  --ember:#f07a52; --ember-soft:#2a1611; --ember-line:#4d2617;
+  --deep:#8fc4bb; --deep-soft:#13231f;
+  --gold:#d8b45c; --gold-soft:#241d0e;
+  --ok:#7dc39a; --ok-soft:#122019;
+  --stop:#e88b96; --stop-soft:#261215;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -16px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;
+  padding-left:max(20px,env(safe-area-inset-left,0px));
+  padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);margin:0;font-weight:600;letter-spacing:-.018em;text-wrap:balance}
+p{margin:0 0 1em}
+a{color:var(--ember)}
+ul,ol{margin:0 0 1em;padding-left:1.2em}
+li{margin:0 0 .4em}
+strong{font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ember);font-weight:600;margin:0 0 14px}
+.eyebrow.q{color:var(--ink-3)}
+.measure{max-width:var(--measure)}
+.small{font-size:15px;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-size:.9em}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;
+  background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--paper)}
+.nav-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:16px;
+  padding-block:11px;
+  padding-left:max(20px,env(safe-area-inset-left,0px));
+  padding-right:max(20px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:none}
+.brandmark{width:30px;height:30px;border-radius:8px;background:var(--ember);color:#fff;display:grid;
+  place-items:center;font-family:var(--display);font-weight:700;font-size:17px}
+.brand b{font-size:16px;letter-spacing:.01em}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);line-height:1.2;font-weight:400}
+.navlinks{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.navlinks a{font-size:14.5px;color:var(--ink-2);text-decoration:none;padding:7px 11px;border-radius:8px}
+.navlinks a:hover{background:var(--paper-2);color:var(--ink)}
+.navcta{background:var(--ember)!important;color:#fff!important;font-weight:600}
+.navcta:hover{filter:brightness(1.08)}
+@media(max-width:860px){
+  .navlinks{order:3;width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .navlinks::-webkit-scrollbar{display:none}
+  .brand span{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{padding-block:72px 56px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(40px,7.2vw,76px);line-height:1.02;margin:0 0 20px}
+.thesis{font-family:var(--display);font-size:clamp(20px,2.6vw,27px);line-height:1.38;color:var(--ink-2);
+  max-width:24ch;margin:0 0 26px;font-weight:400}
+.lede{font-size:19px;color:var(--ink-2);max-width:var(--measure)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 0}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-size:16.5px;font-weight:600;
+  border-radius:10px;padding:13px 22px;border:1.5px solid var(--ember);background:var(--ember);color:#fff;
+  cursor:pointer;text-decoration:none;line-height:1.2}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ember)}
+.btn.ghost:hover{background:var(--ember-soft);filter:none}
+.btn.quiet{background:var(--card);color:var(--ink-2);border-color:var(--line-2)}
+.btn.quiet:hover{background:var(--paper-2);color:var(--ink);filter:none}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;
+  margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.fact .n{font-family:var(--display);font-size:38px;line-height:1;font-weight:600}
+.fact .l{font-size:14px;color:var(--ink-3);margin-top:7px;line-height:1.35}
+
+/* ---------- sections ---------- */
+section{padding-block:66px;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin:0 0 14px}
+h3{font-size:21px;margin:0 0 8px}
+.sechead{max-width:var(--measure);margin-bottom:34px}
+
+/* ---------- the gate band ---------- */
+.band{background:var(--stop-soft);border-top:3px solid var(--stop);border-bottom:1px solid var(--line)}
+.gatecols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+@media(max-width:760px){.gatecols{grid-template-columns:1fr}}
+.gatecard{background:var(--card);border:1.5px solid var(--stop);border-radius:14px;padding:22px 24px}
+.gatecard .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--stop);font-weight:600;margin:0 0 7px}
+.gatecard p:last-child{margin-bottom:0}
+.rulequote{font-family:var(--display);font-size:clamp(21px,3vw,30px);line-height:1.3;margin:0;
+  max-width:30ch;font-weight:600}
+
+/* ---------- modules ---------- */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;min-width:0}
+.mod.gate{border-color:var(--stop);background:var(--stop-soft)}
+.mod .top{display:flex;align-items:center;gap:10px}
+.mod .num{width:30px;height:30px;flex:none;border-radius:9px;background:var(--deep);color:var(--paper);
+  display:grid;place-items:center;font-family:var(--display);font-size:15px;font-weight:700}
+.mod.gate .num{background:var(--stop);color:#fff}
+.mod .min{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-left:auto}
+.mod h3{font-size:18.5px;margin:0}
+.mod p{margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.5;flex:1}
+.mod .sg{font-size:14px;color:var(--stop);display:flex;gap:7px;line-height:1.4;
+  border-top:1px dashed var(--line-2);padding-top:10px}
+.mod.gate .sg{border-top-color:var(--ember-line)}
+
+/* ---------- two ways ---------- */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.ways{grid-template-columns:1fr}}
+.way{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--card);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.way.feature{border:2px solid var(--deep);background:var(--deep-soft)}
+.way .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 10px}
+.way.feature .tag{color:var(--deep)}
+.way h3{font-size:25px;margin-bottom:10px}
+.way .price{font-family:var(--display);font-size:34px;line-height:1.1;margin:16px 0 4px;font-weight:600}
+.way .pricenote{font-size:14.5px;color:var(--ink-3);margin:0 0 16px}
+.way ul{margin:0 0 20px;padding-left:0;list-style:none}
+.way li{display:flex;gap:10px;align-items:flex-start;font-size:16px;margin-bottom:9px;line-height:1.45}
+.way li .tick{color:var(--ok);flex:none;font-weight:700}
+.way .foot{margin-top:auto}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--card);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;
+  box-shadow:var(--shadow);margin-top:28px}
+.calc-grid{display:grid;grid-template-columns:1.1fr .9fr}
+@media(max-width:820px){.calc-grid{grid-template-columns:1fr}}
+.calc-in{padding:26px;border-right:1px solid var(--line);min-width:0}
+@media(max-width:820px){.calc-in{border-right:0;border-bottom:1px solid var(--line)}}
+.calc-out{padding:26px;background:var(--paper-2);min-width:0}
+.field{margin:0 0 20px}
+.field:last-child{margin-bottom:0}
+label{display:block;font-size:14.5px;font-weight:600;color:var(--ink-2);margin:0 0 7px}
+input[type=text],input[type=email],input[type=number],textarea,select{
+  width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);
+  border:1.5px solid var(--line-2);border-radius:10px;padding:11px 13px;line-height:1.45}
+textarea{min-height:92px;resize:vertical}
+input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{
+  outline:2.5px solid var(--ember);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--ember)}
+.rangerow{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.rangerow .v{font-family:var(--display);font-size:27px;font-weight:600;line-height:1}
+.rangerow .u{font-size:15px;color:var(--ink-3)}
+.hint{font-size:13.5px;color:var(--ink-3);margin:6px 0 0}
+.total{font-family:var(--display);font-size:clamp(40px,6vw,56px);line-height:1;font-weight:600;
+  font-variant-numeric:tabular-nums;margin:0}
+.total small{font-size:.42em;font-family:var(--mono);letter-spacing:.08em;color:var(--ink-3);
+  font-weight:400;display:block;margin-bottom:6px}
+.breakdown{margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+.brow{display:flex;justify-content:space-between;gap:12px;font-size:15.5px;padding:5px 0}
+.brow .lbl{color:var(--ink-2)}
+.brow .val{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.brow.hi{font-weight:700;border-top:1px solid var(--line);margin-top:6px;padding-top:11px}
+.perhead{margin-top:14px;background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 32%,transparent);
+  border-radius:10px;padding:12px 14px;font-size:15px}
+.perhead b{font-family:var(--mono);font-size:17px}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);margin:0}
+table{border-collapse:collapse;width:100%;font-size:16px;min-width:540px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;background:var(--paper-2)}
+tr:last-child td{border-bottom:0}
+
+/* ---------- leaders ---------- */
+.leadgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:start}
+@media(max-width:860px){.leadgrid{grid-template-columns:1fr}}
+.doccard{border:1px solid var(--line-2);border-radius:14px;padding:22px 24px;background:var(--card);box-shadow:var(--shadow)}
+.doccard h3{font-size:19px}
+.doccard .meta{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 0}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;border:1px solid var(--line-2);
+  border-radius:99px;padding:5px 11px;color:var(--ink-2);background:var(--paper)}
+
+/* ---------- booking ---------- */
+.bookgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.bookgrid{grid-template-columns:1fr}}
+.full{grid-column:1/-1}
+.radio-row{display:flex;gap:9px;flex-wrap:wrap}
+.radio-chip{position:relative}
+.radio-chip input{position:absolute;opacity:0;width:0;height:0}
+.radio-chip span{display:inline-block;border:1.5px solid var(--line-2);border-radius:99px;padding:9px 17px;
+  font-size:15.5px;cursor:pointer;background:var(--card);color:var(--ink-2)}
+.radio-chip input:checked+span{background:var(--deep);border-color:var(--deep);color:var(--paper);font-weight:600}
+.radio-chip input:focus-visible+span{outline:2.5px solid var(--ember);outline-offset:2px}
+.sent{display:none;margin-top:16px;background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 34%,transparent);
+  border-radius:12px;padding:15px 17px;font-size:15.5px}
+.sent.show{display:block}
+.preview{font-family:var(--mono);font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-word;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:16px;max-height:300px;overflow:auto;margin-top:14px}
+
+/* ---------- callouts ---------- */
+.callout{border-radius:12px;padding:18px 20px;margin:22px 0;border:1px solid;font-size:16.5px}
+.callout .ct{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:600;margin-bottom:7px}
+.callout p:last-child{margin-bottom:0}
+.c-stop{background:var(--stop-soft);border-color:var(--stop)} .c-stop .ct{color:var(--stop)}
+.c-note{background:var(--deep-soft);border-color:color-mix(in srgb,var(--deep) 36%,transparent)} .c-note .ct{color:var(--deep)}
+.c-gold{background:var(--gold-soft);border-color:color-mix(in srgb,var(--gold) 36%,transparent)} .c-gold .ct{color:var(--gold)}
+
+
+/* ---------- attribution ---------- */
+.creditcard{border:2px solid var(--deep);border-radius:18px;padding:30px 32px;background:var(--deep-soft);box-shadow:var(--shadow)}
+@media(max-width:560px){.creditcard{padding:22px}}
+.creditk{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);margin:0 0 8px}
+.creditname{font-size:clamp(24px,3.4vw,33px);line-height:1.15;margin:0 0 16px}
+.creditline{font-size:17px;color:var(--ink-2);max-width:var(--measure)}
+.creditsplit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0 0}
+@media(max-width:620px){.creditsplit{grid-template-columns:1fr}}
+.creditsplit > div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.creditsplit .ck{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.creditsplit p:last-child{margin:0;font-size:16px}
+.creditnote{margin:22px 0 0;padding-top:18px;border-top:1px solid color-mix(in srgb,var(--deep) 30%,transparent);
+  font-size:15.5px;color:var(--ink-2);max-width:var(--measure)}
+
+/* ---------- the law ---------- */
+.lawband{background:var(--paper-2)}
+.lawtable td{font-size:15.5px;line-height:1.52}
+.lawtable td:first-child{background:var(--card)}
+.lawsub{display:block;font-size:13.5px;color:var(--ink-3);margin-top:4px;line-height:1.4}
+.lawpill{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;border:1px solid;border-radius:99px;padding:3px 9px}
+.p-reg{color:var(--deep);border-color:var(--deep);background:var(--deep-soft)}
+.p-duty{color:var(--stop);border-color:var(--stop);background:var(--stop-soft)}
+.p-data{color:var(--gold);border-color:var(--gold);background:var(--gold-soft)}
+.p-new{color:var(--ember);border-color:var(--ember);background:var(--ember-soft)}
+.rungs{display:grid;gap:10px;margin:18px 0 0}
+.rung{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.rung .rn{font-family:var(--display);font-size:26px;font-weight:700;color:var(--stop);line-height:1}
+.rung strong{display:block;font-size:17px;margin-bottom:3px}
+.rung span{font-size:15.5px;color:var(--ink-2);display:block}
+.rung .num{font-family:var(--mono);color:var(--stop)}
+
+footer{padding-block:48px 72px;font-size:15px;color:var(--ink-3);line-height:1.6}
+footer a{color:var(--ink-2)}
+footer p{max-width:var(--measure)}
+.iconbtn{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink-2);
+  width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;display:grid;place-items:center}
+.iconbtn:hover{border-color:var(--line-2);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span class="brandmark">F</span><b>Forge<span>Professional development</span></b></a>
+    <div class="navlinks">
+      <a href="#gate">Safeguarding</a>
+      <a href="#modules">The course</a>
+      <a href="#builton">Attribution</a>
+      <a href="#ways">Two ways</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#law">The law</a>
+      <a href="#leaders">For leaders</a>
+      <a class="navcta" href="#book">Book</a>
+    </div>
+    <button class="iconbtn" id="themebtn" title="Light or dark" aria-label="Switch between light and dark">◐</button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Forge · Teacher professional development · Dubai</p>
+    <h1>Tasks Worth Setting</h1>
+    <p class="thesis">Most tasks can be finished without thinking. This is how to tell which of yours can.</p>
+    <p class="lede">Seven modules on intellectual demand, access, and what may never go into an AI tool. Two of the seven are safeguarding, and both must be passed before any other module opens. Take it at your own pace, or have it delivered live to your staff.</p>
+    <div class="ctas">
+      <a class="btn" href="course.html">Open the course</a>
+      <a class="btn ghost" href="#pricing">Book live training</a>
+      <a class="btn quiet" href="summary.pdf">Summary for leaders (PDF)</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="n">7</div><div class="l">modules, five hours of directed study</div></div>
+      <div class="fact"><div class="n">2</div><div class="l">safeguarding modules, before anything else</div></div>
+      <div class="fact"><div class="n">5</div><div class="l">build architectures taught</div></div>
+      <div class="fact"><div class="n">0</div><div class="l">lesson observations, and nothing collected about you</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE GATE ============ -->
+<section class="band" id="gate">
+  <div class="wrap">
+    <p class="eyebrow">Why this course is shaped the way it is</p>
+    <h2>Safeguarding is the gate, not a module</h2>
+    <p class="lede measure">Most AI training for teachers covers safeguarding in a slide near the end. This course puts it in front, twice, and will not let a learner past it — the remaining modules are inert until both gates are passed. Then every module after them closes by applying the same discipline to whatever it has just taught.</p>
+
+    <div class="gatecols">
+      <div class="gatecard">
+        <p class="k">Gate one · what never goes in</p>
+        <p class="rulequote">Treat a chatbot as a potentially public data warehouse, not a private tool.</p>
+        <p class="small" style="margin-top:14px">Eight categories of personal data, the combinations that identify a child without naming one, a redaction drill, and the four decisions before a tool touches a classroom.</p>
+      </div>
+      <div class="gatecard">
+        <p class="k">Gate two · harm, and what you must do</p>
+        <p class="rulequote">The duty to report is yours in law. It is not delegated by your school.</p>
+        <p class="small" style="margin-top:14px">Wadeema's Law Articles 42 and 43, the escalation ladder beyond your school, AI-enabled harm between children, wellbeing, and concerns about adults.</p>
+      </div>
+    </div>
+
+    <div class="callout c-stop" style="margin-top:26px">
+      <span class="ct">The argument the course turns on</span>
+      <p>Every other failure of an AI tool — bias, invented sources, confident error, a task made easier while claiming to be better — is in the <em>output</em>. You read it, reject it, ask again, and nothing has happened. A privacy failure is in the <em>input</em>. It happens the moment you press enter, and there is no second draft. You get unlimited attempts at one and a single attempt at the other, which is why they are not taught as the same subject.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODULES ============ -->
+<section id="modules">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Seven modules · 305 minutes of directed study</p>
+      <h2>What the course covers</h2>
+      <p class="lede">Every module closes with <em>Safeguarding by design</em> — the same discipline pointed at what that module has just taught you to build. Each one makes a different argument.</p>
+    </div>
+    <div class="mods">
+      <article class="mod gate">
+        <div class="top"><span class="num">1</span><span class="min">50 min · Gate</span></div>
+        <h3>What never goes in</h3>
+        <p>What may never be entered into a tool, why privacy is different in kind from every other failure, and the case nobody plans for: the student who discloses.</p>
+        <p class="sg"><span>■</span><span>This module <em>is</em> the safeguarding module. Everything after it is this, applied.</span></p>
+      </article>
+      <article class="mod gate">
+        <div class="top"><span class="num">2</span><span class="min">35 min · Gate</span></div>
+        <h3>Harm, and what you must do</h3>
+        <p>Mandatory reporting as federal law, the escalation ladder beyond your school, AI-enabled harm between children, wellbeing, and concerns about adults.</p>
+        <p class="sg"><span>■</span><span>Design is prevention. Every published image is raw material; every channel you build is one nobody is watching.</span></p>
+      </article>
+      <article class="mod">
+        <div class="top"><span class="num">3</span><span class="min">20 min</span></div>
+        <h3>What the tool actually is</h3>
+        <p>One real prompt, one real output, and everything wrong with both. You find the faults; the course names them afterwards.</p>
+        <p class="sg"><span>■</span><span>Six faults you can reject. One — the prompt — you cannot.</span></p>
+      </article>
+      <article class="mod">
+        <div class="top"><span class="num">4</span><span class="min">50 min</span></div>
+        <h3>What makes a task worth setting</h3>
+        <p>Topic is not demand. The four Transforming Tasks strategies and their sixteen techniques, and the question AI has made unavoidable.</p>
+        <p class="sg"><span>■</span><span>Demanding tasks ask students for more of themselves. Audit for disclosure, not only for demand.</span></p>
+      </article>
+      <article class="mod">
+        <div class="top"><span class="num">5</span><span class="min">35 min</span></div>
+        <h3>The hierarchy of tasks — SAMR</h3>
+        <p>What the technology is actually doing, why it is a lens rather than a league table, and the second ladder hidden inside it.</p>
+        <p class="sg"><span>■</span><span>Every rung you climb, the task collects more about the child.</span></p>
+      </article>
+      <article class="mod">
+        <div class="top"><span class="num">6</span><span class="min">45 min</span></div>
+        <h3>Differentiating without lowering demand</h3>
+        <p>One destination, several roads. Tiers, named structures, the tiering trap, and getting three genuine routes out of a model.</p>
+        <p class="sg"><span>■</span><span>Describe routes, never children. The standing ability list is the most dangerous document in a school.</span></p>
+      </article>
+      <article class="mod">
+        <div class="top"><span class="num">7</span><span class="min">70 min</span></div>
+        <h3>Building it — five architectures</h3>
+        <p>From a single revision file to a multi-user interdependent task. How to build each shape, and what each one costs you in data.</p>
+        <p class="sg"><span>■</span><span>The architecture is the safeguarding decision, made before the schema is written.</span></p>
+      </article>
+      <article class="mod" style="background:var(--paper-2);box-shadow:none">
+        <div class="top"><span class="num" style="background:var(--gold)">§</span><span class="min">Appendix</span></div>
+        <h3>References and compliance</h3>
+        <p>Version and review dates, the safeguarding coverage map, every source, the accessibility statement, and a plain account of what the certificate is and is not.</p>
+        <p class="sg" style="color:var(--ink-3)"><span>■</span><span>Written for the reviewer, not the learner.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ BUILT ON ============ -->
+<section id="builton">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Attribution</p>
+      <h2>Whose framework this is</h2>
+    </div>
+
+    <div class="creditcard">
+      <p class="creditk">The intellectual architecture</p>
+      <h3 class="creditname">South Australian Department for Education</h3>
+      <p class="creditline"><strong>Transforming Tasks</strong> — four strategies and sixteen techniques for raising the intellectual demand of a learning task, developed and published by the Department within its <strong>Teaching for Effective Learning (TfEL)</strong> framework, and built from national assessment data and trialled across a state system.</p>
+      <p class="creditline">The framework taught in Module 4, the twenty formative assessment check-ins used in the task builder, and the subject exemplar cards this course points teachers towards are all the Department's work, published openly at <span class="mono">acleadersresource.sa.edu.au</span>.</p>
+      <div class="creditsplit">
+        <div>
+          <p class="ck">Theirs</p>
+          <p>The four strategies, the sixteen named techniques, the twenty check-ins, and the published exemplars.</p>
+        </div>
+        <div>
+          <p class="ck">Ours</p>
+          <p>The examples, the module structure, the assessment design, the safeguarding spine and the AI application.</p>
+        </div>
+      </div>
+      <p class="creditnote"><strong>Forge is not affiliated with, endorsed by, or acting on behalf of the South Australian Department for Education.</strong> The framework is credited wherever it is used, in the course, in the summary dossier and here. Before any commercial use of this course, the licensing position for the underlying Transforming Tasks materials is to be confirmed in writing with the Department.</p>
+    </div>
+
+    <h3 style="margin-top:38px">Also drawn on, and credited</h3>
+    <div class="tw" style="margin-top:14px">
+      <table>
+        <tr><th style="width:38%">Source</th><th>Where it appears</th></tr>
+        <tr><td><strong>Carol Ann Tomlinson</strong> — the differentiated instruction model</td><td>Module 6: readiness, interest and learning profile against content, process and product.</td></tr>
+        <tr><td><strong>Dr Jessica A. Hockett</strong> — <em>A.C.C.E.S.S. Differentiation Handbook</em>, Tennessee Department of Education, 2018</td><td>Module 6: the KUD framing and the named structures — tiered tasks, ThinkDots, RAFT, choice grids, entry points.</td></tr>
+        <tr><td><strong>Dr Ruben Puentedura</strong> — the SAMR model</td><td>Module 5, taught together with Hamilton, Rosenberg &amp; Akcaoglu's published criticism of its use as a hierarchy.</td></tr>
+        <tr><td><strong>Prof. Martin Westwell</strong> — fluency and fluency plus</td><td>Module 4, within the South Australian system.</td></tr>
+        <tr><td><strong>Stein, Smith, Henningsen &amp; Silver</strong> — cognitive demand</td><td>Module 4.</td></tr>
+        <tr><td><strong>Pashler, McDaniel, Rohrer &amp; Bjork</strong> — learning styles</td><td>Module 6, as the basis for the statement that matching instruction to a preferred modality is not supported.</td></tr>
+      </table>
+    </div>
+    <p class="small" style="margin-top:14px">Every source, with full citations, is listed in the course appendix and on page 15 of the <a href="summary.pdf">summary dossier</a>.</p>
+  </div>
+</section>
+
+<!-- ============ TWO WAYS ============ -->
+<section id="ways">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Delivery</p>
+      <h2>Two ways to take it</h2>
+      <p class="lede">The course is the same either way. What changes is whether anyone is in the room when you build something.</p>
+    </div>
+    <div class="ways">
+      <div class="way">
+        <p class="tag">Option one</p>
+        <h3>Self-paced</h3>
+        <p class="small" style="margin-bottom:16px">Open it and work through at your own pace, on any device, offline if you like.</p>
+        <ul>
+          <li><span class="tick">✓</span><span>All seven modules, both gates and the final assessment</span></li>
+          <li><span class="tick">✓</span><span>Three portfolio pieces built on your own units</span></li>
+          <li><span class="tick">✓</span><span>Progress saved in your own browser — no account, nothing uploaded</span></li>
+          <li><span class="tick">✓</span><span>Module 1 available in Arabic</span></li>
+          <li><span class="tick">✓</span><span>Printable as a single document</span></li>
+        </ul>
+        <div class="foot">
+          <p class="price" style="font-size:24px">Pricing on enquiry</p>
+          <p class="pricenote">Per seat, or as a school-wide licence. Tell us the number of staff and we will quote.</p>
+          <a class="btn ghost" href="#book">Ask about seats</a>
+        </div>
+      </div>
+      <div class="way feature">
+        <p class="tag">Option two</p>
+        <h3>Virtual training</h3>
+        <p class="small" style="margin-bottom:16px">Live online delivery to your staff, in one-hour sessions, with the building done together.</p>
+        <ul>
+          <li><span class="tick">✓</span><span>Everything in the self-paced course, delivered live</span></li>
+          <li><span class="tick">✓</span><span>Your own schemes of work used as the material</span></li>
+          <li><span class="tick">✓</span><span>Tasks built in the session and taught the next day</span></li>
+          <li><span class="tick">✓</span><span>A cohort-level written summary to leadership — never individual</span></li>
+          <li><span class="tick">✓</span><span>Billed by the hour, per teacher — you only pay for who attends</span></li>
+        </ul>
+        <div class="foot">
+          <p class="price">AED 200<small style="display:inline;font-size:.42em;font-family:var(--mono);color:var(--ink-3)"> / teacher / hour</small></p>
+          <p class="pricenote">One-hour sessions. Four-hour minimum, so AED 800 per teacher at the floor.</p>
+          <a class="btn" href="#pricing">Work out the cost</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Virtual training</p>
+      <h2>What it costs</h2>
+      <p class="lede">Live training is AED 200 per teacher for each one-hour session. The minimum booking is four hours. Move the sliders to price your own cohort.</p>
+    </div>
+
+    <div class="calc">
+      <div class="calc-grid">
+        <div class="calc-in">
+          <div class="field">
+            <label for="sessions">Sessions — one hour each</label>
+            <div class="rangerow"><span class="v" id="sessOut">4</span><span class="u" id="hoursOut">4 hours in total</span></div>
+            <input type="range" id="sessions" min="4" max="20" step="1" value="4">
+            <p class="hint">Four sessions is the minimum booking. Most schools run two a week across a half term, or pair them into two-hour blocks after school.</p>
+          </div>
+          <div class="field">
+            <label for="people">Teachers taking part</label>
+            <div class="rangerow"><span class="v" id="pplOut">12</span><span class="u">teachers</span></div>
+            <input type="range" id="people" min="1" max="60" step="1" value="12">
+            <p class="hint">Billing is per teacher, so this moves the total. Only the teachers who attend are charged.</p>
+          </div>
+          <div class="field">
+            <label for="clinic">Add the 90-minute follow-up clinic at day 30</label>
+            <div class="radio-row">
+              <label class="radio-chip"><input type="radio" name="clinic" value="1" checked><span>Include it</span></label>
+              <label class="radio-chip"><input type="radio" name="clinic" value="0"><span>Not for now</span></label>
+            </div>
+            <p class="hint">Included at no extra charge. It is where someone who is not you looks at a task you actually built and says what is wrong with it.</p>
+          </div>
+        </div>
+        <div class="calc-out">
+          <p class="total"><small>Total for the group</small><span id="totalOut">AED 9,600</span></p>
+          <div class="breakdown">
+            <div class="brow"><span class="lbl">Rate</span><span class="val" id="bSess">AED 200 / teacher / hour</span></div>
+            <div class="brow"><span class="lbl">Contact hours</span><span class="val" id="bHours">4</span></div>
+            <div class="brow"><span class="lbl">Teachers</span><span class="val" id="bPeople">12</span></div>
+            <div class="brow"><span class="lbl">Day-30 clinic</span><span class="val" id="bClinic">Included</span></div>
+            <div class="brow hi"><span class="lbl">Total</span><span class="val" id="bTotal">AED 9,600</span></div>
+          </div>
+          <div class="perhead">That is <b id="perHead">AED 800</b> per teacher for <span id="perHours">4</span> hours of live training.</div>
+          <a class="btn" href="#book" style="margin-top:20px;width:100%;justify-content:center">Request these dates</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout c-note">
+      <span class="ct">What the fee includes, and what it does not</span>
+      <p><strong>Included:</strong> live delivery of every session, the self-paced course for everyone taking part for the duration of the programme, the day-30 clinic, and a cohort-level written summary to leadership. <strong>Not included:</strong> travel for on-site delivery, which is quoted separately, and any platform — the course runs on whatever your school has already approved, including nothing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT DOES NOT DO ============ -->
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Before you buy, not after</p>
+      <h2>What this course does not do</h2>
+    </div>
+    <div class="tw">
+      <table>
+        <tr><th style="width:36%">We do not</th><th>Why</th></tr>
+        <tr><td><strong>Observe, appraise or report on an individual</strong></td><td>Nothing reaches your school with a teacher's name on it. The written summary is cohort-level only, and participants are told so in session one.</td></tr>
+        <tr><td><strong>Claim statutory accreditation</strong></td><td>This carries none in the UAE, the wider Gulf, Kenya or Nigeria. It is not approved by KHDA or any regulator. Said here rather than in the small print.</td></tr>
+        <tr><td><strong>Supply a ready-made task bank</strong></td><td>A bank you did not build is a bank you will not maintain.</td></tr>
+        <tr><td><strong>Train the use of a named tool</strong></td><td>Tools change every few months. The judgement about what to ask them for does not.</td></tr>
+        <tr><td><strong>Require any platform</strong></td><td>It runs on whatever your school has already approved, including nothing.</td></tr>
+        <tr><td><strong>Collect anything about the learner</strong></td><td>No account, no server, no analytics. The course is built the way its last module says to build things.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ THE LAW ============ -->
+<section id="law" class="lawband">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow">The regulatory and legal framework</p>
+      <h2>What is established in law, and what it covers</h2>
+      <p class="lede">Teachers are rarely told which instrument applies to what — so when something goes wrong, the question "who do I tell, and am I obliged to?" gets answered by school custom instead of by law. The course names each instrument so that a teacher knows which question to ask and who to ask it of.</p>
+    </div>
+
+    <div class="callout c-note">
+      <span class="ct">The distinction that gets lost first</span>
+      <p><strong>KHDA is the regulator. It is not the legislation.</strong> It licenses and inspects, and it will ask a school to show its safeguarding arrangements. The duty that falls on a teacher personally comes from federal law, and no school policy — and no inspection outcome — creates or removes it.</p>
+    </div>
+
+    <div class="tw" style="margin-top:26px">
+      <table class="lawtable">
+        <tr>
+          <th style="width:25%">Instrument</th>
+          <th style="width:33%">What it establishes</th>
+          <th>What it covers in a school</th>
+        </tr>
+        <tr>
+          <td>
+            <strong>KHDA</strong>
+            <span class="lawsub">Knowledge and Human Development Authority — the regulator for private education in Dubai</span>
+            <span class="lawpill p-reg">Regulator</span>
+          </td>
+          <td>Licensing and inspection of private schools in Dubai, carried out through the Dubai Schools Inspection Bureau against the UAE School Inspection Framework.</td>
+          <td>Safeguarding and child protection arrangements are inspected, and in Dubai safeguarding operates as a limiting judgement — it caps what can be awarded above it. In practice an inspection expects to see a child protection and safeguarding policy with its review date, a named designated safeguarding lead and deputy, a confidential concern log, a single central record, an online safety policy, an approved code of conduct, and whole-staff training records with dates.</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Federal Law No. 3 of 2016</strong>
+            <span class="lawsub">Child Rights Law — “Wadeema’s Law”</span>
+            <span class="lawpill p-duty">Personal duty</span>
+          </td>
+          <td>The rights of the child and the duty to protect them. <strong>Article 42</strong> obliges any person who knows that a child is exposed to harm to report it to the appropriate authorities, including the police and child protection units. <strong>Article 43</strong> places a specific duty on named professionals — <strong>including teachers</strong> — to report signs of abuse, neglect or mistreatment. <strong>Article 49</strong> provides for child protection units.</td>
+          <td>This is the one that falls on the individual. The obligation is yours; it is not delegated to you by your employer and it cannot be withdrawn by one. “I told my line manager and they said to leave it” does not discharge it. Module 2 teaches the duty, the threshold (concern, not proof), and what you do and never do when a child discloses.</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Federal Decree-Law No. 45 of 2021</strong>
+            <span class="lawsub">Protection of Personal Data</span>
+            <span class="lawpill p-data">Data</span>
+          </td>
+          <td>The federal data protection regime: a lawful basis for processing, data minimisation, purpose limitation, security, and the rights of the data subject including access and erasure.</td>
+          <td>A child’s name, work, reading age, SEND status or photograph entered into a third-party AI tool is a processing and transfer event, whether or not anything bad follows. Module 1 teaches the eight categories of personal data, the combinations that identify a child without naming one, and the four decisions — approval, consent, minimisation, retention — before a tool touches a classroom.</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Federal Decree-Law No. 26 of 2025</strong>
+            <span class="lawsub">Child Digital Safety — in force 1 January 2026, fully enforceable January 2027</span>
+            <span class="lawpill p-new">Newest</span>
+          </td>
+          <td>Duties on <strong>digital platforms, internet service providers and custodians</strong> — age verification proportionate to risk, parental control tools, notice-and-takedown for child sexual abuse material, filtering, and reporting to the competent authorities. No processing of the personal data of a child under 13 without explicit custodian consent, and no targeted advertising or commercial profiling of them.</td>
+          <td><strong>Schools are not named as a directly regulated party</strong> — which is the most common misreading of it in staffrooms. A school is caught because it chooses the platforms, creates the accounts and sets the year groups, so it has to be able to evidence that it took reasonable steps. Module 2 teaches what that means in practice: a platform register, the under-13 line, and checking a tool’s own minimum age before the lesson rather than after the complaint.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:38px">Where a concern actually goes</h3>
+    <p class="lede measure">Most induction stops at the first rung. The rest of the ladder exists for the day it is not enough — when the school route is unavailable, or when the concern is about the school itself.</p>
+    <div class="rungs">
+      <div class="rung"><span class="rn">1</span><div><strong>Your designated safeguarding lead</strong><span>or the deputy DSL. Always, and the same day. Every concern, however small it looks.</span></div></div>
+      <div class="rung"><span class="rn">2</span><div><strong>Dubai Child Protection Centre — <span class="num">800988</span></strong><span>The Community Development Authority’s 24-hour child protection hotline. In Abu Dhabi, ADEK’s line is 800 555.</span></div></div>
+      <div class="rung"><span class="rn">3</span><div><strong>Police — <span class="num">999</span></strong><span>Immediate danger, or a suspected criminal offence against a child. No permission required from anyone.</span></div></div>
+    </div>
+
+    <div class="callout c-stop" style="margin-top:26px">
+      <span class="ct">So that naming these cannot be misread</span>
+      <p>Setting out the regulatory and legal framework describes the environment a Dubai school works in. It is <strong>not</strong> a claim of approval. This course carries no statutory accreditation, endorsement or licence credit in the UAE, the wider Gulf, Kenya or Nigeria, and it is not approved by KHDA or by any regulator. Its legal content is written from published sources and has not yet been reviewed by a qualified UAE legal practitioner — it is orientation so that a teacher knows which instrument to ask about, and it is not legal advice. Your school’s data protection lead, designated safeguarding lead and legal counsel decide what applies in your setting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR LEADERS ============ -->
+<section id="leaders">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">For school leaders and inspection</p>
+      <h2>The evidence it produces</h2>
+      <p class="lede">A certificate proves attendance. What an inspector actually wants is the work: rebuilt tasks on your own schemes, student work showing the demand rose, and a staff body that knows where a concern goes.</p>
+    </div>
+    <div class="leadgrid">
+      <div>
+        <h3>What a participating teacher produces</h3>
+        <ul class="measure">
+          <li>An honest audit of one task they already set, naming the strategy missing from it.</li>
+          <li>One task in three routes to a single destination, with a statement of where it nearly went wrong.</li>
+          <li>A finished task on their own unit, with six tests applied and the failing one named.</li>
+          <li>A one-page AI use note: approved tools, what never goes in, which tasks will never get an AI step, their DSL and the external reporting route.</li>
+        </ul>
+        <div class="callout c-gold">
+          <span class="ct">Stated plainly</span>
+          <p>The course's own certificate is self-declared, generated in the learner's browser from a name they type. It is <strong>not verified training evidence</strong> and should not be filed as proof of safeguarding training. For that you need your own attendance record alongside the learner's exported portfolio, reviewed by a person. The course collects nothing, so it can verify nothing — that trade is deliberate and we would rather say so.</p>
+        </div>
+      </div>
+      <div class="doccard">
+        <p class="meta">16 pages · A4 · PDF</p>
+        <h3>Course summary and compliance dossier</h3>
+        <p class="small">Written for reviewers. Clickable contents and bookmarks, a page per module, the safeguarding coverage map, the escalation ladder as a printable pull-out, version and review dates, every source, the accessibility statement, and one page in Arabic.</p>
+        <div class="chips">
+          <span class="chip">Coverage map</span>
+          <span class="chip">Escalation ladder</span>
+          <span class="chip">References</span>
+          <span class="chip">عربي</span>
+        </div>
+        <a class="btn quiet" href="summary.pdf" style="margin-top:18px;width:100%;justify-content:center">Download the dossier</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section id="book">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow q">Enquiries</p>
+      <h2>Book, or ask a question</h2>
+      <p class="lede">This form builds the enquiry and opens it in your own email app. Nothing is sent anywhere by this page, and nothing is stored — the site works the way the course says to work.</p>
+    </div>
+
+    <form id="bookform" novalidate>
+      <div class="bookgrid">
+        <div class="field">
+          <label for="f_name">Your name</label>
+          <input type="text" id="f_name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f_school">School or organisation</label>
+          <input type="text" id="f_school" name="school" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="f_email">Your email</label>
+          <input type="email" id="f_email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f_phone">Phone <span class="small">(optional)</span></label>
+          <input type="text" id="f_phone" name="phone" autocomplete="tel">
+        </div>
+        <div class="field full">
+          <label>What are you asking about?</label>
+          <div class="radio-row">
+            <label class="radio-chip"><input type="radio" name="kind" value="Virtual training" checked><span>Virtual training</span></label>
+            <label class="radio-chip"><input type="radio" name="kind" value="Self-paced seats"><span>Self-paced seats</span></label>
+            <label class="radio-chip"><input type="radio" name="kind" value="School-wide licence"><span>School-wide licence</span></label>
+            <label class="radio-chip"><input type="radio" name="kind" value="Something else"><span>Something else</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f_people">How many teachers</label>
+          <input type="number" id="f_people" name="people" min="1" max="500" value="12">
+        </div>
+        <div class="field">
+          <label for="f_sessions">Hours, if virtual <span class="small">(one-hour sessions, minimum 4)</span></label>
+          <input type="number" id="f_sessions" name="sessions" min="4" max="40" value="4">
+        </div>
+        <div class="field full">
+          <label for="f_when">When would suit</label>
+          <input type="text" id="f_when" name="when" placeholder="e.g. Mondays and Wednesdays 15:00–16:00, starting after half term">
+        </div>
+        <div class="field full">
+          <label for="f_notes">Anything else we should know</label>
+          <textarea id="f_notes" name="notes" placeholder="Phase and subjects, what your improvement plan is focused on, or anything you want covered."></textarea>
+        </div>
+      </div>
+      <div class="ctas" style="margin-top:4px">
+        <button class="btn" type="submit">Open this in my email app</button>
+        <button class="btn quiet" type="button" id="copybtn">Copy the enquiry instead</button>
+      </div>
+      <div class="sent" id="sentmsg"></div>
+      <div class="preview" id="preview" hidden></div>
+    </form>
+
+    <div class="callout c-note" style="margin-top:28px">
+      <span class="ct">Or just write</span>
+      <p>Email <a href="mailto:asilivirtualschool@gmail.com" id="plainmail">asilivirtualschool@gmail.com</a>. Tell us the phase, the subjects, roughly how many staff, and what your school improvement plan is focused on this year. A scoping call is twenty minutes and there is no charge for it.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Forge · Tasks Worth Setting.</strong> Designing for intellectual demand and access — safely, with AI in the room. Seven modules, 305 minutes of directed study, self-paced or delivered live, with a ninety-minute Integration Clinic at day 30.</p>
+    <p>The course teaches the <strong>Transforming Tasks</strong> strategies and techniques, developed and published by the <strong>South Australian Department for Education</strong> within its Teaching for Effective Learning framework. Forge is not affiliated with, endorsed by, or acting on behalf of the Department. The framework is theirs; the examples, module structure, assessment design and AI application are ours. It also draws on the differentiated instruction model of Carol Ann Tomlinson, the A.C.C.E.S.S. Differentiation Handbook (Hockett, Tennessee Department of Education, 2018), and the SAMR model of Ruben Puentedura together with published criticism of its use as a hierarchy. Full references are in the <a href="summary.pdf">dossier</a> and in the course appendix.</p>
+    <p>Legal content is written from published sources and has not yet been reviewed by a qualified UAE legal practitioner. It is orientation, not legal advice. This course carries no statutory accreditation in any jurisdiction.</p>
+    <p><strong>This site collects nothing.</strong> No account, no analytics, no cookies, no form submitted anywhere. The enquiry form composes an email in your own app and the page forgets it.</p>
+    <p class="small">Forge · part of Edu Forge · Robert Wanyoike · Dubai · <span class="mono">v2.0 · October 2026</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ─────────────────────────────────────────────────────────────
+   CONFIG — change this one line to your own booking address.
+   It appears in the mailto link and in the "Or just write" box.
+   ───────────────────────────────────────────────────────────── */
+var CONTACT_EMAIL = "asilivirtualschool@gmail.com";
+/* ───────────────────────────────────────────────────────────── */
+
+var RATE = 200;            // AED per teacher, per one-hour session
+var HOURS_PER_SESSION = 1;
+var MIN_SESSIONS = 4;      // the four-hour minimum
+
+var $ = function(id){ return document.getElementById(id); };
+
+/* ---------- theme ---------- */
+var root = document.documentElement;
+try{ var saved = localStorage.getItem("forge_site_theme"); if(saved) root.setAttribute("data-theme", saved); }catch(e){}
+$("themebtn").addEventListener("click", function(){
+  var cur = root.getAttribute("data-theme");
+  var next = cur === "dark" ? "light" : cur === "light" ? "dark"
+    : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark");
+  root.setAttribute("data-theme", next);
+  try{ localStorage.setItem("forge_site_theme", next); }catch(e){}
+});
+
+/* ---------- contact address ---------- */
+var pm = $("plainmail");
+pm.textContent = CONTACT_EMAIL;
+pm.href = "mailto:" + CONTACT_EMAIL;
+
+/* ---------- pricing calculator ---------- */
+function money(n){ return "AED " + n.toLocaleString("en-AE"); }
+function clinicOn(){
+  var el = document.querySelector('input[name="clinic"]:checked');
+  return !el || el.value === "1";
+}
+function price(){
+  var sessions = Math.max(MIN_SESSIONS, parseInt($("sessions").value, 10) || MIN_SESSIONS);
+  var people   = Math.max(1, parseInt($("people").value, 10) || 1);
+  var hours    = sessions * HOURS_PER_SESSION;
+  var total    = sessions * people * RATE;
+  return { sessions: sessions, people: people, hours: hours, total: total, clinic: clinicOn() };
+}
+function renderPrice(){
+  var p = price();
+  $("sessOut").textContent  = p.sessions;
+  $("hoursOut").textContent = p.hours + " hours in total";
+  $("pplOut").textContent   = p.people;
+  $("totalOut").textContent = money(p.total);
+  $("bSess").textContent    = money(RATE) + " / teacher / hour";
+  $("bPeople").textContent  = p.people;
+  $("bHours").textContent   = p.hours;
+  $("bClinic").textContent  = p.clinic ? "Included" : "Not included";
+  $("bTotal").textContent   = money(p.total);
+  $("perHead").textContent  = money(p.hours * RATE);
+  $("perHours").textContent = p.hours;
+  // keep the booking form in step with the calculator
+  if(!$("f_sessions").dataset.touched) $("f_sessions").value = p.sessions;
+  if(!$("f_people").dataset.touched)   $("f_people").value   = p.people;
+}
+["sessions","people"].forEach(function(id){ $(id).addEventListener("input", renderPrice); });
+document.querySelectorAll('input[name="clinic"]').forEach(function(r){ r.addEventListener("change", renderPrice); });
+["f_sessions","f_people"].forEach(function(id){
+  $(id).addEventListener("input", function(){ this.dataset.touched = "1"; });
+});
+renderPrice();
+
+/* ---------- booking enquiry ---------- */
+function val(id){ var e = $(id); return e ? String(e.value || "").trim() : ""; }
+function kind(){
+  var el = document.querySelector('input[name="kind"]:checked');
+  return el ? el.value : "Enquiry";
+}
+function buildEnquiry(){
+  var k = kind();
+  var sessions = Math.max(MIN_SESSIONS, parseInt(val("f_sessions"), 10) || MIN_SESSIONS);
+  var people   = Math.max(1, parseInt(val("f_people"), 10) || 1);
+  var isVirtual = (k === "Virtual training");
+  var lines = [];
+  lines.push("Enquiry: " + k + " — Tasks Worth Setting");
+  lines.push("");
+  lines.push("Name:        " + (val("f_name") || "—"));
+  lines.push("School:      " + (val("f_school") || "—"));
+  lines.push("Email:       " + (val("f_email") || "—"));
+  if(val("f_phone")) lines.push("Phone:       " + val("f_phone"));
+  lines.push("Teachers:    " + people);
+  if(isVirtual){
+    var hours = sessions * HOURS_PER_SESSION;
+    var total = sessions * people * RATE;
+    lines.push("Hours:       " + hours + " × one-hour sessions");
+    lines.push("Indicative:  " + hours + " hours × " + people + " teachers × " + money(RATE) +
+               " = " + money(total) + " (" + money(hours * RATE) + " per teacher)");
+    lines.push("Clinic:      " + (clinicOn() ? "Include the day-30 clinic" : "Without the day-30 clinic"));
+  }
+  if(val("f_when")) { lines.push("Timing:      " + val("f_when")); }
+  if(val("f_notes")){
+    lines.push("");
+    lines.push("Notes:");
+    lines.push(val("f_notes"));
+  }
+  lines.push("");
+  lines.push("— Sent from the Tasks Worth Setting site. Prices quoted are indicative and subject to a written quotation.");
+  return { subject: k + " — " + (val("f_school") || "enquiry") + " — Tasks Worth Setting", body: lines.join("\n") };
+}
+function showSent(html){
+  var s = $("sentmsg"); s.innerHTML = html; s.classList.add("show");
+}
+function missing(){
+  var gaps = [];
+  if(!val("f_name"))   gaps.push("your name");
+  if(!val("f_school")) gaps.push("your school");
+  if(!val("f_email"))  gaps.push("your email");
+  return gaps;
+}
+$("bookform").addEventListener("submit", function(e){
+  e.preventDefault();
+  var gaps = missing();
+  if(gaps.length){
+    showSent("<strong>Nearly.</strong> Add " + gaps.join(", ") + " so we can reply to you.");
+    return;
+  }
+  var m = buildEnquiry();
+  var href = "mailto:" + CONTACT_EMAIL +
+             "?subject=" + encodeURIComponent(m.subject) +
+             "&body=" + encodeURIComponent(m.body);
+  window.location.href = href;
+  $("preview").textContent = "To: " + CONTACT_EMAIL + "\nSubject: " + m.subject + "\n\n" + m.body;
+  $("preview").hidden = false;
+  showSent("<strong>Your email app should be opening.</strong> If nothing happened, the full enquiry is below — copy it and send it to " +
+           CONTACT_EMAIL + " yourself.");
+});
+$("copybtn").addEventListener("click", function(){
+  var m = buildEnquiry();
+  var text = "To: " + CONTACT_EMAIL + "\nSubject: " + m.subject + "\n\n" + m.body;
+  $("preview").textContent = text;
+  $("preview").hidden = false;
+  var done = function(){ showSent("<strong>Copied.</strong> Paste it into an email to " + CONTACT_EMAIL + "."); };
+  var fallback = function(){
+    var r = document.createRange(); r.selectNodeContents($("preview"));
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    showSent("<strong>Select and copy the text below</strong>, then send it to " + CONTACT_EMAIL + ".");
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+});
+})();
+</script>
+</body>
+</html>
